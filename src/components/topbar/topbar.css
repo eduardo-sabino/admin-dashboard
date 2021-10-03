@@ -1,27 +1,68 @@
-.topbar{
+.top-bar{
   width: 100%;
-  height: 3rem;
+  height: 3.5rem;
   background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
-.topbar-wrapper{
+.top-bar-wrapper{
   height: 100%;
   padding: 0 1.3em;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.topleft{
-
+.top-left{
+  display: flex;
+  align-items: center ;
 }
-.topleft .logo{
+.top-left .logo{
     font-weight: bold;
-    font-size: 1.8rem;
-    color: darkblue;
+    font-size: 1.7rem;
+    color: rgb(51, 27, 83);
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: -1px;
 }
-.topright{
-
+.top-right{
+  display: flex;
+  align-items: center ;
+  height: 100%;
 }
-.topright .topbar-icons{
-
+.top-right .top-bar-icon-container{
+  position: relative;
+  cursor: pointer;
+  margin-right: 1.1rem;
+  color: rgb(71, 71, 71);
+}
+.top-bar-icon-container .top-icon-badge{
+  width: .9rem;
+  height: .9rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(206, 9, 35);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .6rem;
+}
+.top-bar-icon-container .top-bar__icon{
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+}
+.top-right .top-avatar{
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  background: grey;
+  background-image: url("https://motionarray.imgix.net/preview-489184-Dwtq36WLX3a4iGmT-large.jpg?w=1400&q=60&fit=max&auto=format");
+  background-repeat: no-repeat;
+  background-size: 170%;
+  background-position: 40% 50%;
+  cursor: pointer;
 }
