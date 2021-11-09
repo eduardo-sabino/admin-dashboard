@@ -1,6 +1,7 @@
 .container{
-  display: flex;
+  position: relative;
 }
-.others{
-  flex: 4;
+.link{
+  text-decoration: none;
+  color: inherit;
 }

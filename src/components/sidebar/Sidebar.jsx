@@ -1,3 +1,6 @@
+import {useContext} from 'react'
+import { MenuContext } from '../../App'
+
 import './sidebar.css'
 import {
   LineStyle,
@@ -11,20 +14,36 @@ import {
   DynamicFeed,
   ChatBubbleOutline,
   WorkOutline,
-  Report,
+  Report
 } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
-export default function Sidebar(){
+
+export default function Sidebar({toggleMenuDisplay}){
+  const isMenuDisplayed = useContext(MenuContext)
+
+  console.log(isMenuDisplayed);
+  const menuStyle = {
+    transform: isMenuDisplayed ? "translateX(0)" : "translateX(-15rem)"
+  }
+  const handleResize = () => {
+    if (window.innerWidth > "1104" && !isMenuDisplayed) toggleMenuDisplay();
+    
+  }
+  window.addEventListener('resize', handleResize)
+
   return (
-    <div className="sidebar">
+    <div className="sidebar" style={window.innerWidth <= "1104" ? menuStyle : {transform: "translateX(0)"}}>
       <div className="sidebar-wrapper">
         <div className="sidebar-menu">
           <h3 className="sidebar-title">Dashboard</h3>
           <ul className="sidebar-list">
-            <li className="sidebar-list-item active">
-              <LineStyle className="sidebar-icon" />
-              Home
-            </li>
+            <Link to="/" className="link">    
+              <li className="sidebar-list-item active">
+                <LineStyle className="sidebar-icon" />
+                Home
+              </li>
+            </Link>
             <li className="sidebar-list-item">
               <Timeline className="sidebar-icon" />
               Analytics
@@ -39,14 +58,18 @@ export default function Sidebar(){
         <div className="sidebar-menu">
           <h3 className="sidebar-title">Quick Menu</h3>
           <ul className="sidebar-list">
-            <li className="sidebar-list-item">
-              <PermIdentity className="sidebar-icon" />
-              Users
-            </li>
-            <li className="sidebar-list-item">
-              <Storefront className="sidebar-icon" />
-              Products
-            </li>
+            <Link to="/users" className="link">
+              <li className="sidebar-list-item">
+                <PermIdentity className="sidebar-icon" />
+                Users
+              </li>
+            </Link>
+            <Link to="/products" className="link">
+              <li className="sidebar-list-item">
+                <Storefront className="sidebar-icon" />
+                Products
+              </li>
+            </Link>
             <li className="sidebar-list-item">
               <AttachMoney className="sidebar-icon" />
               Transactions

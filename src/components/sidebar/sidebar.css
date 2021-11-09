@@ -1,10 +1,12 @@
 .sidebar{
-    flex: 1;
+    /* transform: translateX(0); */
+    overflow-y: scroll;
     height: calc(100vh - 3.5rem);
     background-color: rgb(255, 255, 255);
-    position: sticky;
-    top: 3.5rem;
-    max-width: 14.5rem;
+    position: fixed;
+    top:3.5rem;
+    left: 0;
+    width: 14.5rem;
 }
 .sidebar-wrapper{
     padding: 1rem 0 0 0;
@@ -45,4 +47,14 @@ hr{
     border-top: 1px solid #ccc;
     margin: 1em 0;
     padding: 0;
+}
+@media screen and (max-width: 1104px){
+    .sidebar{       
+        
+        z-index: 1888;
+        /* min-width: 14.5rem; */
+        height: calc(100vh - 3.5rem);
+        transform: translateX(-15rem);
+        transition: transform .3s ease;
+    }
 }

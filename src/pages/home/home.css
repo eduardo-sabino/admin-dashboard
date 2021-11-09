@@ -1,0 +1,25 @@
+.home{
+    position: absolute;
+    width: calc(100% - 14.5rem );
+    top: 3.5rem;
+    left: 14.5rem;
+}
+
+.home-widgets{
+    display: flex;
+    margin-left: 20px;    
+}
+
+@media screen and (max-width: 1104px){
+    .home{
+        width: 100%;
+        left: 0;
+    }         
+}
+
+@media screen and (max-width: 1186px){
+    .home-widgets{
+        display: flex;
+        flex-direction: column;
+     }
+}
