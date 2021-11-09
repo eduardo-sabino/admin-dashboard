@@ -1,0 +1,44 @@
+.user-list{
+    box-sizing: border-box;
+    position: absolute;
+    width: calc(100% - 14.5rem );
+    top: 3.5rem;
+    left: 14.5rem;
+    height: calc(100vh - 3.5rem);
+}
+
+.user-list-user{
+    display: flex;
+    align-items: center;
+    
+}
+.user-list-img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.user-list-edit{
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #3bb077;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.user-list-delete{
+    color: red;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1104px){
+    .user-list{
+        width: 100%;
+        left: 0;
+        padding: 20px;
+    }
+}

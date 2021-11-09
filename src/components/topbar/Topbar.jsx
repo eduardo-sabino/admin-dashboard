@@ -1,13 +1,22 @@
+
+
 import "./topbar.css"
 import {NotificationsNone, Language, Settings} from '@mui/icons-material/';
-/* import LanguageIcon from '@mui/icons-material/Language'; */
-/* import { NotificationsNone } from '@material-ui/icons/'; */
+import ListIcon from '@mui/icons-material/List';
 
-export default function Topbar(){
+export default function Topbar({toggleMenuDisplay}){
+
+  
+  const handleMenuIconClick = () => {
+    toggleMenuDisplay()
+  }
+  
+
   return (
     <div className='top-bar'>
       <div className='top-bar-wrapper'>
         <div className='top-left'>
+          <ListIcon className='list-icon' onClick={handleMenuIconClick}/>
           <span className='logo'>Dashboard</span>
         </div>
         <div className='top-right'>
